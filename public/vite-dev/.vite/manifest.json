@@ -1,0 +1,23 @@
+{
+  "entrypoints/inertia.js": {
+    "file": "assets/inertia-UZ6qX6Vj.js",
+    "name": "entrypoints/inertia.js",
+    "src": "entrypoints/inertia.js",
+    "isEntry": true,
+    "css": [
+      "assets/inertia-CpsiPcfB.css"
+    ]
+  },
+  "inertia.svg": {
+    "file": "assets/inertia-BBwuM70o.svg",
+    "src": "inertia.svg"
+  },
+  "vite_ruby.svg": {
+    "file": "assets/vite_ruby-BkLf4vgQ.svg",
+    "src": "vite_ruby.svg"
+  },
+  "vue.svg": {
+    "file": "assets/vue-Md3ciZpm.svg",
+    "src": "vue.svg"
+  }
+}
