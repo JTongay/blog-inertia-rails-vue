@@ -16,11 +16,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link, Head } from '@inertiajs/vue3'
 import Form from './Form.vue'
 
-const { post } = defineProps(['post'])
+type Props = {
+  post: any
+}
+
+defineProps<Props>()
 
 const handleSubmit = (form) => {
   form.transform((data) => ({ post: data }))

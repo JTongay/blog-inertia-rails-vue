@@ -24,11 +24,18 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link, Head } from '@inertiajs/vue3'
 import Post from './Post.vue'
 
-const { post, flash } = defineProps(['post', 'flash'])
+type Props = {
+  post: any
+  flash: {
+    notice: string
+  }
+}
+
+defineProps<Props>()
 
 const onDestroy = (e) => {
   if (!confirm('Are you sure you want to delete this post?')) {
