@@ -3,8 +3,7 @@
 include .env
 export
 
-init:
-	clean-db build create-db migrate seed npm-install
+init: clean-db build create-db migrate seed npm-install
 	echo "Done! You should be able to run 'make up' now."
 up:
 	docker-compose up -d
