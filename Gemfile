@@ -58,6 +58,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'js_from_routes'
   gem 'rspec-rails', '~> 6.1.0'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
 end
 
 group :development do

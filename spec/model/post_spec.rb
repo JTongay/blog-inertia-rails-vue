@@ -9,4 +9,11 @@ RSpec.describe 'Post' do
       expect(post.valid?).to be true
     end
   end
+
+  describe 'factories' do
+    it 'has a valid factory' do
+      post = build(:post)
+      expect(post.valid?).to be true
+    end
+  end
 end
