@@ -5,6 +5,11 @@
 
   <h1>Posts</h1>
 
+  <v-btn variant="tonal">
+    Button
+  </v-btn>
+  <v-text-field label="Label"></v-text-field>
+
   <div>
     <div v-for="post in posts" :key="post.id">
       <Post :post="post" />
