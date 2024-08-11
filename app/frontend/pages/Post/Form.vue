@@ -1,15 +1,13 @@
 <template>
-  <form @submit.prevent="emit('onSubmit', form)">
+  <form @submit.prevent="emit('onSubmit', form)" class="flex flex-row">
     <div>
-      <label class="label" for="title">Title</label>
-      <input type="text" name="title" id="title" v-model="form.title" />
+      <v-text-field label="Title" v-model="form.title" id="title"/>
       <div v-if="form.errors.title" class="error">
         {{ form.errors.title.join(', ') }}
       </div>
     </div>
     <div>
-      <label class="label" for="body">Body</label>
-      <input type="text" name="body" id="body" v-model="form.body" />
+      <v-textarea v-model="form.body" id="body"/>
       <div v-if="form.errors.body" class="error">
         {{ form.errors.body.join(', ') }}
       </div>
@@ -22,13 +20,13 @@
   </form>
 </template>
 
-<script setup>
-import { useForm } from '@inertiajs/vue3'
+<script setup lang="ts">
+import {useForm} from '@inertiajs/vue3'
 
-const { post, submitText } = defineProps(['post', 'submitText'])
+const {post, submitText} = defineProps(['post', 'submitText'])
 const emit = defineEmits(['onSubmit'])
 
-const form = useForm({
+const form = useForm<{ title: string, body: string }>({
   title: post.title || '',
   body: post.body || '',
 })
@@ -38,6 +36,7 @@ const form = useForm({
 .label {
   display: block;
 }
+
 .error {
   color: red;
 }

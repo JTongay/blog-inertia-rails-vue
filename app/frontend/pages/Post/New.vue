@@ -1,15 +1,16 @@
 <template>
-  <Head title="New post" />
+  <Head title="New post"/>
+  <title>New Post</title>
 
-  <h1>New post</h1>
+  <h1 class="text-3xl font-bold underline">New post</h1>
 
   <Form
-    :post="post"
-    submitText="Create post"
-    @onSubmit="handleSubmit"
+      :post="post"
+      submitText="Create post"
+      @onSubmit="handleSubmit"
   />
 
-  <br />
+  <br/>
 
   <div>
     <Link href="/posts">Back to posts</Link>
@@ -17,17 +18,20 @@
 </template>
 
 <script setup lang="ts">
-import { Link, Head } from '@inertiajs/vue3'
+import {Link, Head} from '@inertiajs/vue3'
 import Form from './Form.vue'
 
 type Props = {
-  post: any
+  post: {
+    title: string
+    body: string
+  }
 }
 
 defineProps<Props>()
 
 const handleSubmit = (form) => {
-  form.transform((data) => ({ post: data }))
+  form.transform((data) => ({post: data}))
   form.post('/posts')
 }
 </script>

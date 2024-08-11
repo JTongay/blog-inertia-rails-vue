@@ -1,11 +1,16 @@
 {
+  "entrypoints/application.css": {
+    "file": "assets/application-BcW4-X6r.css",
+    "src": "entrypoints/application.css",
+    "isEntry": true
+  },
   "entrypoints/inertia.js": {
-    "file": "assets/inertia-D0hfaHfW.js",
+    "file": "assets/inertia-BFOXdS9V.js",
     "name": "entrypoints/inertia.js",
     "src": "entrypoints/inertia.js",
     "isEntry": true,
     "css": [
-      "assets/inertia-CgX4Lif2.css"
+      "assets/inertia-DVLNU1pm.css"
     ]
   },
   "inertia.svg": {
