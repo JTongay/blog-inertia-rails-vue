@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="emit('onSubmit', form)" class="flex flex-row">
+  <form @submit.prevent="emit('onSubmit', form)" class="flex flex-column mx-10">
     <div>
       <v-text-field label="Title" v-model="form.title" id="title"/>
       <div v-if="form.errors.title" class="error">
@@ -7,29 +7,40 @@
       </div>
     </div>
     <div>
-      <v-textarea v-model="form.body" id="body"/>
+      <MarkdownInput v-model="form.body" id="body"/>
       <div v-if="form.errors.body" class="error">
         {{ form.errors.body.join(', ') }}
       </div>
     </div>
     <div>
-      <button type="submit" :disabled="form.processing">
+      <v-btn type="submit" :disabled="form.processing">
         {{ submitText }}
-      </button>
+      </v-btn>
     </div>
   </form>
 </template>
 
 <script setup lang="ts">
 import {useForm} from '@inertiajs/vue3'
+import MarkdownInput from "./MarkdownInput.vue";
+import MarkdownViewer from "../MarkdownViewer.vue";
 
-const {post, submitText} = defineProps(['post', 'submitText'])
+type Props = {
+  post?: {
+    title: string
+    body: string
+  }
+  submitText: string
+}
+
+const props = defineProps<Props>()
 const emit = defineEmits(['onSubmit'])
 
 const form = useForm<{ title: string, body: string }>({
-  title: post.title || '',
-  body: post.body || '',
+  title: props.post.title || '',
+  body: props.post.body || '',
 })
+console.log(form.body, "form body")
 </script>
 
 <style scoped>
