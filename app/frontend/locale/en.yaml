@@ -1,0 +1,8 @@
+hello: booyah
+post:
+  new:
+    title: New Post
+
+form:
+  title:
+    label: Title
