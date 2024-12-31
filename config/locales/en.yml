@@ -28,4 +28,13 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        reset_password_token: User reset password token
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: Email already in use

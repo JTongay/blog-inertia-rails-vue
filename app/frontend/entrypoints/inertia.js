@@ -1,6 +1,7 @@
 import {createInertiaApp} from '@inertiajs/vue3'
 import {createApp, h} from 'vue'
 import {createI18n} from "vue-i18n";
+import {createPinia} from 'pinia'
 // Vuetify
 import 'vuetify/styles'
 import {createVuetify} from 'vuetify'
@@ -19,6 +20,9 @@ const i18n = createI18n({
     locale: 'en-US',
     messages: {'en-US': ENSchema}
 })
+
+// Pinia
+const pinia = createPinia()
 
 createInertiaApp({
     // Set default page title
@@ -49,6 +53,7 @@ createInertiaApp({
             .use(plugin)
             .use(vuetify)
             .use(i18n)
+            .use(pinia)
             .mount(el)
     },
 })

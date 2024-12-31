@@ -1,13 +1,13 @@
 <template>
   <form @submit.prevent="emit('onSubmit', form)" class="flex flex-column mx-10">
     <div>
-      <v-text-field label="Title" v-model="form.title" id="title"/>
+      <TextInput label="Title" required v-model="form.title" id="title"/>
       <div v-if="form.errors.title" class="error">
         {{ form.errors.title.join(', ') }}
       </div>
     </div>
     <div>
-      <MarkdownInput v-model="form.body" id="body"/>
+      <MarkdownInput required v-model="form.body" id="body"/>
       <div v-if="form.errors.body" class="error">
         {{ form.errors.body.join(', ') }}
       </div>
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import {useForm} from '@inertiajs/vue3'
 import MarkdownInput from "./MarkdownInput.vue";
-import MarkdownViewer from "../MarkdownViewer.vue";
+import TextInput from "./TextInput.vue";
 
 type Props = {
   post?: {

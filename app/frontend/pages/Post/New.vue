@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import {Link, Head} from '@inertiajs/vue3'
+import {Link, Head, router} from '@inertiajs/vue3'
 import Form from '../../components/form/PostForm.vue'
 import {useI18n} from "vue-i18n";
 
@@ -33,7 +33,7 @@ defineProps<Props>()
 
 const handleSubmit = (form) => {
   form.transform((data) => ({post: data}))
-  form.post('/posts')
+  router.post("/posts", form)
 }
 const {t} = useI18n()
 </script>

@@ -3,6 +3,7 @@
 # This is the PostsController
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   inertia_share flash: -> { flash.to_hash }
 
@@ -69,6 +70,10 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def user
+    @user = User.find(current_user[:id])
   end
 
   # Only allow a list of trusted parameters through.

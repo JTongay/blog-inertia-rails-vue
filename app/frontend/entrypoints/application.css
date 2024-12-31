@@ -1,1 +1,35 @@
 @import "../../assets/stylesheets/application.css";
+
+h1 {
+    @apply text-4xl;
+    @apply font-semibold;
+}
+
+h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+}
+
+h3 {
+    @apply text-2xl;
+    @apply font-semibold;
+}
+
+h4 {
+    @apply text-xl;
+    @apply font-semibold;
+}
+
+h5 {
+    @apply text-lg;
+    @apply font-semibold;
+}
+
+h6 {
+    @apply text-base;
+    @apply font-semibold;
+}
+
+body {
+    @apply font-normal;
+}

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'session/users', registrations: 'registration/users' }, path: 'auth'
   resources :posts
+  resources :users, only: %i[new]
   get 'inertia-example', to: 'inertia_example#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
