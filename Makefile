@@ -32,3 +32,5 @@ lint:
 	docker-compose run -T --rm --entrypoint "bash -c" web "bundle exec rubocop -D"
 lint-autofix:
 	docker-compose run -T --rm --entrypoint "bash -c" web "bundle exec rubocop -a"
+logs-web:
+	docker-compose logs -f web

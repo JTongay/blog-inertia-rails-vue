@@ -1,16 +1,20 @@
 <template>
   <div>
-    <p>
-      <strong>Title:</strong>
-      {{ post.title }}
-    </p>
-    <p>
-      <strong>Body:</strong>
-      {{ post.body }}
-    </p>
+    <div class="text-center">
+      <h1>{{ post.title }}</h1>
+
+      <p>By {{ post.author }}</p>
+    </div>
+    <div v-html="post.content"></div>
   </div>
 </template>
 
-<script setup>
-const { post } = defineProps(['post'])
+<script setup lang="ts">
+import { BlogPost } from "../../models";
+
+type Props = {
+  post: BlogPost;
+};
+
+defineProps<Props>();
 </script>

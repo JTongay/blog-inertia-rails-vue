@@ -78,7 +78,6 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
-    bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -100,12 +99,6 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise (4.9.4)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
     diff-lcs (1.5.1)
     drb (2.2.1)
     dry-cli (1.0.0)
@@ -116,6 +109,7 @@ GEM
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
     ffaker (2.23.0)
+    front_matter_parser (1.0.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -167,7 +161,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
-    orm_adapter (0.5.0)
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -217,14 +210,13 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redcarpet (3.6.1)
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    responders (3.1.1)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
     rexml (3.3.0)
       strscan
+    rouge (4.7.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.1)
@@ -275,8 +267,6 @@ GEM
       dry-cli (>= 0.7, < 2)
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
-    warden (1.2.9)
-      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -299,9 +289,9 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise
   factory_bot_rails
   ffaker
+  front_matter_parser (~> 1.0)
   importmap-rails
   inertia_rails
   inertia_rails-contrib (~> 0.1.1)
@@ -310,6 +300,8 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
+  redcarpet
+  rouge
   rspec-rails (~> 6.1.0)
   selenium-webdriver
   sprockets-rails

@@ -1,14 +1,16 @@
-import vue from '@vitejs/plugin-vue'
-import { defineConfig } from 'vite'
-import RubyPlugin from 'vite-plugin-ruby'
+import vue from "@vitejs/plugin-vue";
+import { defineConfig } from "vite";
+import RubyPlugin from "vite-plugin-ruby";
 import vuetify from "vite-plugin-vuetify";
-import FullReload from "vite-plugin-full-reload"
+import FullReload from "vite-plugin-full-reload";
+import vueDevTools from "vite-plugin-vue-devtools";
 
 export default defineConfig({
   plugins: [
     vue(),
     RubyPlugin(),
-    vuetify({autoImport: true}),
-    FullReload(["config/routes.rb", "app/views/**/*"], { delay: 200 })
+    vuetify({ autoImport: true }),
+    FullReload(["config/routes.rb", "app/views/**/*"], { delay: 200 }),
+    vueDevTools(),
   ],
-})
+});

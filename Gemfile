@@ -33,7 +33,11 @@ gem 'vite_rails'
 
 gem 'inertia_rails-contrib', '~> 0.1.1'
 
-gem 'devise'
+gem 'redcarpet' # Markdown File parser
+
+gem 'front_matter_parser', '~> 1.0' # Yaml metadata on markdown files
+
+gem 'rouge' # CSS on markdown files
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
