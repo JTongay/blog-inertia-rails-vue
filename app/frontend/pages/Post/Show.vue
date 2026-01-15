@@ -1,14 +1,14 @@
 <template>
-  <Head :title="`Post #${post.slug}`" />
+  <Head>
+    <title>Post #{{ post.slug }}</title>
+    <meta name="description" content="your page description" />
+  </Head>
 
   <p v-if="flash.notice" class="notice">{{ flash.notice }}</p>
 
-  <Post :post="post" />
-
-  <div>
+  <div class="mx-8">
+    <Post :post="post" />
     <Link href="/posts">Back to posts</Link>
-
-    <br />
   </div>
 </template>
 

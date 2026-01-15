@@ -9,10 +9,7 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = post_service.all_posts
-    pp '----------------------------'
-    pp @posts
-    pp '----------------------------'
-    render inertia: 'Post/Index', props: {
+    render inertia: pages[:index], props: {
       posts: @posts.map do |post|
         serialize_post(post)
       end
@@ -21,8 +18,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    pp @post
-    render inertia: 'Post/Show', props: {
+    render inertia: pages[:show], props: {
       post: serialize_post(@post)
     }
   end

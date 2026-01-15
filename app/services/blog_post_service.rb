@@ -78,7 +78,7 @@ class BlogPostService
       authored_on: parse_date(frontmatter['authored_on']) || nil,
       author: frontmatter['author'] || 'Anonymous',
       tags: frontmatter['tags'] || [],
-      excerpt: frontmatter['excerpt'] || extract_excerpt(file_path),
+      excerpt: frontmatter['excerpt'] || '', # extract_excerpt(file_path),
       published: frontmatter.fetch('published', true),
       content: html_content,
       reading_time: calculate_reading_time(mardown_content)
