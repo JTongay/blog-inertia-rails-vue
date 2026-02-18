@@ -20,4 +20,6 @@
 
 pre {
   line-height: normal;
+  /* Match the theme of sons-of-obsidian */
+  background: #000;
 }
